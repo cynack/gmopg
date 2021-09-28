@@ -1,11 +1,11 @@
 import Client from '../client'
 import { Constructor } from '../util'
-import { EntryTranPayPayArgs, EntryTranPayPayResult } from './paypayTranable.type'
+import { EntryTranPaypayArgs, EntryTranPaypayResult } from './paypayTranable.type'
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default <T extends Constructor<Client>>(Base: T) =>
   class extends Base {
-    public async entryTranPayPay(args: EntryTranPayPayArgs): Promise<EntryTranPayPayResult> {
+    public async entryTranPaypay(args: EntryTranPaypayArgs): Promise<EntryTranPaypayResult> {
       const defaultData = {
         ShopID: this.config.ShopID,
         ShopPass: this.config.ShopPass,
@@ -13,7 +13,7 @@ export default <T extends Constructor<Client>>(Base: T) =>
         JobCd: undefined,
         Amount: undefined,
       }
-      return this.post<EntryTranPayPayArgs, EntryTranPayPayResult>('/payment/EntryTranPaypay.idPass', {
+      return this.post<EntryTranPaypayArgs, EntryTranPaypayResult>('/payment/EntryTranPaypay.idPass', {
         ...defaultData,
         ...args,
       })
