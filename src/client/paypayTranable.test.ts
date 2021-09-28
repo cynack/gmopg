@@ -3,7 +3,7 @@ import sinon = require('sinon')
 import Client from '../client'
 import { JobCd } from '../client.enum'
 import WithPaypayTranable from './paypayTranable'
-import { EntryTranPaypayArgs, EntryTranPaypayResult } from './paypayTranable.type'
+import { EntryTranPaypayResult } from './paypayTranable.type'
 
 const PaypayTranable = WithPaypayTranable(Client)
 const paypayTranable = new PaypayTranable()
