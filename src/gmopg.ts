@@ -5,13 +5,14 @@ import WithTranable from './client/tranable'
 import WithCvsTranable from './client/cvsTranable'
 import WithMultiTranable from './client/multiTranable'
 import WithPaypayTranable from './client/paypayTranable'
+import WithTokenable from './client/tokenable'
 import WithVirtualaccountTranable from './client/virtualaccountTranable'
 import { generateID } from './util'
 import Client from './client'
 
 export default WithCardable(
   WithVirtualaccountTranable(
-    WithPaypayTranable(WithCvsTranable(WithMemberable(WithMultiTranable(WithTranable(Client)))))
+    WithTokenable(WithPaypayTranable(WithCvsTranable(WithMemberable(WithMultiTranable(WithTranable(Client))))))
   )
 )
 
@@ -31,3 +32,4 @@ export * from './client/cvsTranable.type'
 export * from './client/multiTranable.type'
 export * from './client/paypayTranable.type'
 export * from './client/virtualaccountTranable.type'
+export * from './client/tokenable.type'
